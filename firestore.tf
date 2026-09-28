@@ -22,6 +22,9 @@ resource "google_firestore_document" "global_config" {
     active_workshop_id = {
       stringValue = "morcillaconf-2026"
     }
+    passkey = {
+      stringValue = "alohomora"
+    }
   })
 
   lifecycle {
