@@ -1,0 +1,15 @@
+project_id                 = "escuela-de-hechiceria"
+region                     = "europe-west1"
+artifact_repository_id     = "escuela-de-hechiceria-repo"
+app_name                   = "escuela-de-hechiceria"
+profesores_app_name        = "escuela-de-hechiceria-profesores"
+active_workshop_id         = "test-2026"
+container_image            = "europe-west1-docker.pkg.dev/escuela-de-hechiceria/escuela-de-hechiceria-repo/escuela-de-hechiceria:latest"
+profesores_container_image = "us-docker.pkg.dev/cloudrun/container/hello"
+github_owner               = "lauramorillo"
+github_repositories        = [
+  "lauramorillo/escuela-de-hechicerIA",
+  "lauramorillo/escuela-de-hechicerIA-profesores"
+]
+cors_origin                = "*"
+gemini_model               = "gemini-2.5-flash"
