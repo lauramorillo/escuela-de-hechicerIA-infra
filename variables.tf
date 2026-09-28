@@ -28,12 +28,6 @@ variable "profesores_app_name" {
   default     = "escuela-de-hechiceria-profesores"
 }
 
-variable "active_workshop_id" {
-  description = "ID del workshop activo para el aislamiento multitenant"
-  type        = string
-  default     = "test-2026"
-}
-
 variable "container_image" {
   description = "URL de la imagen del contenedor de la aplicación principal"
   type        = string

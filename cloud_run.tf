@@ -34,11 +34,6 @@ resource "google_cloud_run_v2_service" "app" {
       }
 
       env {
-        name  = "ACTIVE_WORKSHOP_ID"
-        value = var.active_workshop_id
-      }
-
-      env {
         name  = "GOOGLE_CLOUD_PROJECT"
         value = var.project_id
       }
@@ -106,11 +101,6 @@ resource "google_cloud_run_v2_service" "profesores" {
       env {
         name  = "NODE_ENV"
         value = "production"
-      }
-
-      env {
-        name  = "ACTIVE_WORKSHOP_ID"
-        value = var.active_workshop_id
       }
 
       env {
