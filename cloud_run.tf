@@ -42,6 +42,11 @@ resource "google_cloud_run_v2_service" "app" {
         name  = "GOOGLE_CLOUD_LOCATION"
         value = var.region
       }
+
+      env {
+        name  = "EVALUATION_SERVICE_URL"
+        value = google_cloud_run_v2_service.profesores.uri
+      }
     }
   }
 
