@@ -7,7 +7,8 @@ resource "google_cloud_run_v2_service" "app" {
   ingress  = "INGRESS_TRAFFIC_ALL"
 
   template {
-    service_account = google_service_account.cloud_run_sa.email
+    service_account                  = google_service_account.cloud_run_sa.email
+    max_instance_request_concurrency = 40
 
     scaling {
       min_instance_count = 0
@@ -20,7 +21,7 @@ resource "google_cloud_run_v2_service" "app" {
       resources {
         limits = {
           cpu    = "1"
-          memory = "512Mi"
+          memory = "1Gi"
         }
       }
 
@@ -82,7 +83,8 @@ resource "google_cloud_run_v2_service" "profesores" {
   ingress  = "INGRESS_TRAFFIC_ALL"
 
   template {
-    service_account = google_service_account.profesores_sa.email
+    service_account                  = google_service_account.profesores_sa.email
+    max_instance_request_concurrency = 10
 
     scaling {
       min_instance_count = 0
@@ -94,8 +96,8 @@ resource "google_cloud_run_v2_service" "profesores" {
 
       resources {
         limits = {
-          cpu    = "1"
-          memory = "512Mi"
+          cpu    = "2"
+          memory = "1Gi"
         }
       }
 
