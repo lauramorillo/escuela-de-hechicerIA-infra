@@ -74,6 +74,21 @@ resource "google_cloud_run_v2_service_iam_member" "public_access" {
   member   = "allUsers"
 }
 
+resource "google_cloud_run_domain_mapping" "app_domain" {
+  count    = var.custom_domain != "" ? 1 : 0
+  project  = var.project_id
+  location = var.region
+  name     = var.custom_domain
+
+  metadata {
+    namespace = var.project_id
+  }
+
+  spec {
+    route_name = google_cloud_run_v2_service.app.name
+  }
+}
+
 # ==============================================================================
 # Cloud Run: Microservicio Evaluador (Profesores)
 # ==============================================================================

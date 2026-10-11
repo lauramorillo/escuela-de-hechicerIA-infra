@@ -47,3 +47,14 @@ output "github_deployer_service_account" {
   description = "Email de la Service Account utilizada por GitHub Actions"
   value       = google_service_account.github_deployer.email
 }
+
+output "custom_domain_url" {
+  description = "URL pública con dominio personalizado"
+  value       = var.custom_domain != "" ? "https://${var.custom_domain}" : null
+}
+
+output "custom_domain_dns_records" {
+  description = "Registros DNS requeridos para el dominio personalizado en Cloud Run"
+  value       = var.custom_domain != "" ? google_cloud_run_domain_mapping.app_domain[0].status[0].resource_records : []
+}
+

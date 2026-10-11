@@ -12,3 +12,5 @@ github_repositories        = [
 ]
 cors_origin                = "*"
 gemini_model               = "gemini-2.5-flash"
+custom_domain              = "escuela-hechiceria.missbytes.com"
+

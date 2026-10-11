@@ -66,3 +66,10 @@ variable "gemini_model" {
   type        = string
   default     = "gemini-2.5-flash"
 }
+
+variable "custom_domain" {
+  description = "Dominio o subdominio personalizado para el servicio principal en Cloud Run (vacío para desactivar)"
+  type        = string
+  default     = "escuela-hechiceria.missbytes.com"
+}
+
