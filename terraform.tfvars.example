@@ -11,6 +11,6 @@ github_repositories        = [
   "lauramorillo/escuela-de-hechicerIA-profesores"
 ]
 cors_origin                = "*"
-gemini_model               = "gemini-2.5-flash"
+gemini_model               = "gemini-3.8-flash"
 custom_domain              = "escuela-hechiceria.missbytes.com"
 

@@ -41,7 +41,12 @@ resource "google_cloud_run_v2_service" "app" {
 
       env {
         name  = "GOOGLE_CLOUD_LOCATION"
-        value = var.region
+        value = "eu"
+      }
+
+      env {
+        name  = "GEMINI_MODEL"
+        value = var.gemini_model
       }
 
       env {
@@ -132,7 +137,7 @@ resource "google_cloud_run_v2_service" "profesores" {
 
       env {
         name  = "GOOGLE_CLOUD_LOCATION"
-        value = var.region
+        value = "eu"
       }
 
       env {

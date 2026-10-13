@@ -64,7 +64,7 @@ variable "cors_origin" {
 variable "gemini_model" {
   description = "Modelo de Gemini a utilizar para las evaluaciones"
   type        = string
-  default     = "gemini-2.5-flash"
+  default     = "gemini-3.8-flash"
 }
 
 variable "custom_domain" {
