@@ -50,6 +50,11 @@ resource "google_cloud_run_v2_service" "app" {
       }
 
       env {
+        name  = "GEMINI_FALLBACK_MODEL"
+        value = var.gemini_fallback_model
+      }
+
+      env {
         name  = "EVALUATION_SERVICE_URL"
         value = google_cloud_run_v2_service.profesores.uri
       }
@@ -148,6 +153,11 @@ resource "google_cloud_run_v2_service" "profesores" {
       env {
         name  = "GEMINI_MODEL"
         value = var.gemini_model
+      }
+
+      env {
+        name  = "GEMINI_FALLBACK_MODEL"
+        value = var.gemini_fallback_model
       }
     }
   }

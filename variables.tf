@@ -62,9 +62,15 @@ variable "cors_origin" {
 }
 
 variable "gemini_model" {
-  description = "Modelo de Gemini a utilizar para las evaluaciones"
+  description = "Modelo principal de Gemini a utilizar (Interactions API)"
   type        = string
   default     = "gemini-3.8-flash"
+}
+
+variable "gemini_fallback_model" {
+  description = "Modelo de respaldo de Gemini ante límites de cuota (429)"
+  type        = string
+  default     = "gemini-3.5-flash-lite"
 }
 
 variable "custom_domain" {
